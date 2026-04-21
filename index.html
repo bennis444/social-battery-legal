@@ -15,7 +15,11 @@
     <div class="bg-vignette-v"></div>
     <div class="bg-vignette-h"></div>
     <div class="stars" id="stars"></div>
-    <!-- Subtle wave at bottom -->
+    <div class="bubbles" id="bubbles"></div>
+    <!-- Wave layers at bottom -->
+    <svg class="bg-wave-2" viewBox="0 0 1440 140" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,80 C320,130 560,30 800,80 C1040,130 1200,30 1440,80 L1440,140 L0,140 Z" fill="#7ED4E8"/>
+    </svg>
     <svg class="bg-wave" viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M0,60 C240,110 480,10 720,60 C960,110 1200,10 1440,60 L1440,120 L0,120 Z" fill="#4D9FBF"/>
     </svg>
@@ -83,14 +87,16 @@
 
         <nav class="nav-cards" aria-label="Legal pages">
           <a href="privacy.html" class="nav-card">
-            <div>
+            <span class="nav-card-icon" aria-hidden="true">🔒</span>
+            <div class="nav-card-body">
               <div class="nav-card-title">Privacy Policy</div>
               <div class="nav-card-desc">How we handle your data</div>
             </div>
             <span class="nav-card-arrow" aria-hidden="true">&#8594;</span>
           </a>
           <a href="terms.html" class="nav-card">
-            <div>
+            <span class="nav-card-icon" aria-hidden="true">📜</span>
+            <div class="nav-card-body">
               <div class="nav-card-title">Terms of Use</div>
               <div class="nav-card-desc">Rules for using the app</div>
             </div>
@@ -113,13 +119,15 @@
   </div>
 
   <script>
-    // Generate 36 stars deterministically (seed 42, matches app)
+    // Deterministic PRNG (seed 42, matches app)
+    var s = 42;
+    function rnd() { s = (s * 9301 + 49297) % 233280; return s / 233280; }
+    var W = window.innerWidth, H = window.innerHeight;
+
+    // Generate 36 stars
     (function() {
       var stars = document.getElementById('stars');
       if (!stars) return;
-      var s = 42;
-      function rnd() { s = (s * 9301 + 49297) % 233280; return s / 233280; }
-      var W = window.innerWidth, H = window.innerHeight;
       for (var i = 0; i < 36; i++) {
         var r = rnd();
         var x = rnd() * W;
@@ -140,6 +148,32 @@
           '--tw-dur:' + dur + 'ms',
         ].join(';');
         stars.appendChild(el);
+      }
+    })();
+
+    // Generate 14 bubbles (battery mechanic)
+    (function() {
+      var box = document.getElementById('bubbles');
+      if (!box) return;
+      for (var i = 0; i < 14; i++) {
+        var x = rnd() * W;
+        var size = 8 + rnd() * 22;
+        var op = 0.35 + rnd() * 0.45;
+        var dur = 11 + rnd() * 9;
+        var delay = rnd() * 14;
+        var sway = (rnd() - 0.5) * 60;
+        var el = document.createElement('span');
+        el.className = 'bubble';
+        el.style.cssText = [
+          'left:' + x.toFixed(1) + 'px',
+          'width:' + size.toFixed(1) + 'px',
+          'height:' + size.toFixed(1) + 'px',
+          '--bub-dur:' + dur.toFixed(1) + 's',
+          '--bub-delay:' + delay.toFixed(1) + 's',
+          '--bub-op:' + op.toFixed(2),
+          '--bub-sway:' + sway.toFixed(0) + 'px',
+        ].join(';');
+        box.appendChild(el);
       }
     })();
   </script>
