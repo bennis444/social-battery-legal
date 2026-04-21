@@ -114,7 +114,7 @@ body {
   width: 120%;
   height: 44vh;
   opacity: 0.1;
-  animation: wave-drift 10s ease-in-out infinite alternate;
+  animation: wave-drift 4.5s ease-in-out infinite alternate;
   will-change: transform;
 }
 
@@ -125,7 +125,7 @@ body {
   width: 120%;
   height: 52vh;
   opacity: 0.06;
-  animation: wave-drift-2 14s ease-in-out infinite alternate;
+  animation: wave-drift-2 6s ease-in-out infinite alternate;
   will-change: transform;
 }
 
@@ -138,7 +138,7 @@ body {
   height: 42vh;
   opacity: 0.09;
   transform: scaleY(-1);
-  animation: wave-drift-top 11s ease-in-out infinite alternate;
+  animation: wave-drift-top 5s ease-in-out infinite alternate;
   will-change: transform;
 }
 
@@ -150,7 +150,7 @@ body {
   height: 50vh;
   opacity: 0.05;
   transform: scaleY(-1) scaleX(-1);
-  animation: wave-drift-top-2 15s ease-in-out infinite alternate;
+  animation: wave-drift-top-2 7s ease-in-out infinite alternate;
   will-change: transform;
 }
 
@@ -222,8 +222,12 @@ body {
   padding: 0 24px;
 }
 
-/* ─── Header ────────────────────────────────────────────────────────────────── */
+/* ─── Header (index = hero centered) ───────────────────────────────────────── */
 .site-header {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 48px 0 32px;
   text-align: center;
 }
