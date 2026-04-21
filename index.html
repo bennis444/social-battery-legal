@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Social Battery — Legal</title>
+  <meta name="description" content="Legal documents for the Social Battery iOS app." />
+  <meta name="robots" content="noindex" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Background scene -->
+  <div class="bg-scene" aria-hidden="true">
+    <div class="bg-gradient"></div>
+    <div class="bg-vignette-v"></div>
+    <div class="bg-vignette-h"></div>
+    <div class="stars" id="stars"></div>
+    <!-- Subtle wave at bottom -->
+    <svg class="bg-wave" viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,60 C240,110 480,10 720,60 C960,110 1200,10 1440,60 L1440,120 L0,120 Z" fill="#4D9FBF"/>
+    </svg>
+  </div>
+
+  <div class="page">
+    <header class="site-header">
+      <div class="container">
+        <div class="buddy-wrap">
+          <!-- Buddy mascot — inline SVG, blue default, eyes blink -->
+          <svg class="buddy-bounce" width="120" height="128" viewBox="0 0 160 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Social Battery buddy mascot">
+            <defs>
+              <radialGradient id="bodyGrad" cx="38%" cy="28%" r="68%" fx="38%" fy="28%">
+                <stop offset="0%" stop-color="#7ED4E8"/>
+                <stop offset="52%" stop-color="#4D9FBF"/>
+                <stop offset="100%" stop-color="#1A5C7A"/>
+              </radialGradient>
+              <radialGradient id="armGradL" cx="65%" cy="35%" r="70%">
+                <stop offset="0%" stop-color="#7ED4E8"/>
+                <stop offset="100%" stop-color="#4D9FBF"/>
+              </radialGradient>
+              <radialGradient id="armGradR" cx="35%" cy="35%" r="70%">
+                <stop offset="0%" stop-color="#7ED4E8"/>
+                <stop offset="100%" stop-color="#4D9FBF"/>
+              </radialGradient>
+            </defs>
+
+            <!-- Body circle -->
+            <circle cx="80" cy="128" r="72" fill="url(#bodyGrad)"/>
+
+            <!-- Highlight sheen -->
+            <ellipse cx="58" cy="100" rx="16" ry="11" fill="rgba(255,255,255,0.2)"/>
+
+            <!-- Antennae -->
+            <path d="M 64 60 C 52 46 46 34 50 22" stroke="#4D9FBF" stroke-width="5" fill="none" stroke-linecap="round"/>
+            <circle cx="50" cy="22" r="5" fill="#4D9FBF"/>
+            <path d="M 96 60 C 106 48 110 36 106 24" stroke="#4D9FBF" stroke-width="5" fill="none" stroke-linecap="round"/>
+            <circle cx="106" cy="24" r="5" fill="#4D9FBF"/>
+
+            <!-- Arms -->
+            <ellipse cx="18" cy="146" rx="22" ry="15" fill="url(#armGradL)"/>
+            <ellipse cx="142" cy="146" rx="22" ry="15" fill="url(#armGradR)"/>
+
+            <!-- Legs -->
+            <rect x="58" y="193" width="20" height="26" rx="9" ry="9" fill="#4D9FBF"/>
+            <rect x="82" y="193" width="20" height="26" rx="9" ry="9" fill="#4D9FBF"/>
+
+            <!-- Eyes group — blink animation applied here -->
+            <g class="buddy-eyes" style="transform-box: fill-box; transform-origin: center;">
+              <circle cx="58" cy="120" r="13" fill="#0d0d0d"/>
+              <circle cx="102" cy="120" r="13" fill="#0d0d0d"/>
+              <circle cx="61" cy="117" r="5" fill="#4DFFEE"/>
+              <circle cx="105" cy="117" r="5" fill="#4DFFEE"/>
+            </g>
+
+            <!-- Mouth — soft smile -->
+            <path d="M 64 146 Q 80 162 96 146" stroke="rgba(255,255,255,0.7)" stroke-width="3" fill="none" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+        <div class="hero">
+          <h1 class="hero-title">Social Battery</h1>
+          <p class="hero-tagline">Legal documents for the iOS app</p>
+        </div>
+
+        <nav class="nav-cards" aria-label="Legal pages">
+          <a href="privacy.html" class="nav-card">
+            <div>
+              <div class="nav-card-title">Privacy Policy</div>
+              <div class="nav-card-desc">How we handle your data</div>
+            </div>
+            <span class="nav-card-arrow" aria-hidden="true">&#8594;</span>
+          </a>
+          <a href="terms.html" class="nav-card">
+            <div>
+              <div class="nav-card-title">Terms of Use</div>
+              <div class="nav-card-desc">Rules for using the app</div>
+            </div>
+            <span class="nav-card-arrow" aria-hidden="true">&#8594;</span>
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-links">
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="mailto:hello@socialbattery.app">hello@socialbattery.app</a>
+        </div>
+        <p>Social Battery &mdash; All rights reserved</p>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Generate 36 stars deterministically (seed 42, matches app)
+    (function() {
+      var stars = document.getElementById('stars');
+      if (!stars) return;
+      var s = 42;
+      function rnd() { s = (s * 9301 + 49297) % 233280; return s / 233280; }
+      var W = window.innerWidth, H = window.innerHeight;
+      for (var i = 0; i < 36; i++) {
+        var r = rnd();
+        var x = rnd() * W;
+        var y = rnd() * H * 0.65;
+        var sz = r < 0.15 ? 2.4 : r < 0.5 ? 1.8 : 1.2;
+        var op = 0.35 + rnd() * 0.45;
+        var delay = (rnd() * 2400) | 0;
+        var dur = 2800 + (rnd() * 1800) | 0;
+        var el = document.createElement('span');
+        el.className = 'star';
+        el.style.cssText = [
+          'left:' + x.toFixed(1) + 'px',
+          'top:' + y.toFixed(1) + 'px',
+          'width:' + sz + 'px',
+          'height:' + sz + 'px',
+          '--tw-max:' + op.toFixed(3),
+          '--tw-delay:' + delay + 'ms',
+          '--tw-dur:' + dur + 'ms',
+        ].join(';');
+        stars.appendChild(el);
+      }
+    })();
+  </script>
+</body>
+</html>

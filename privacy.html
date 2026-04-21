@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Social Battery</title>
+  <meta name="description" content="Privacy Policy for the Social Battery iOS app." />
+  <meta name="robots" content="noindex" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Background scene -->
+  <div class="bg-scene" aria-hidden="true">
+    <div class="bg-gradient"></div>
+    <div class="bg-vignette-v"></div>
+    <div class="bg-vignette-h"></div>
+    <div class="stars" id="stars"></div>
+    <svg class="bg-wave" viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,60 C240,110 480,10 720,60 C960,110 1200,10 1440,60 L1440,120 L0,120 Z" fill="#4D9FBF"/>
+    </svg>
+  </div>
+
+  <div class="page">
+    <div class="container">
+      <a href="index.html" class="back-link" aria-label="Back to legal index">
+        <span aria-hidden="true">&#8592;</span> Back
+      </a>
+
+      <header class="legal-header">
+        <!-- Mini buddy -->
+        <div class="legal-header-mini-buddy" aria-hidden="true">
+          <svg class="buddy-bounce" width="56" height="60" viewBox="0 0 160 210" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="bodyGradP" cx="38%" cy="28%" r="68%" fx="38%" fy="28%">
+                <stop offset="0%" stop-color="#7ED4E8"/>
+                <stop offset="52%" stop-color="#4D9FBF"/>
+                <stop offset="100%" stop-color="#1A5C7A"/>
+              </radialGradient>
+            </defs>
+            <circle cx="80" cy="128" r="72" fill="url(#bodyGradP)"/>
+            <ellipse cx="58" cy="100" rx="16" ry="11" fill="rgba(255,255,255,0.2)"/>
+            <path d="M 64 60 C 52 46 46 34 50 22" stroke="#4D9FBF" stroke-width="5" fill="none" stroke-linecap="round"/>
+            <circle cx="50" cy="22" r="5" fill="#4D9FBF"/>
+            <path d="M 96 60 C 106 48 110 36 106 24" stroke="#4D9FBF" stroke-width="5" fill="none" stroke-linecap="round"/>
+            <circle cx="106" cy="24" r="5" fill="#4D9FBF"/>
+            <g class="buddy-eyes" style="transform-box: fill-box; transform-origin: center;">
+              <circle cx="58" cy="120" r="13" fill="#0d0d0d"/>
+              <circle cx="102" cy="120" r="13" fill="#0d0d0d"/>
+              <circle cx="61" cy="117" r="5" fill="#4DFFEE"/>
+              <circle cx="105" cy="117" r="5" fill="#4DFFEE"/>
+            </g>
+            <path d="M 64 146 Q 80 162 96 146" stroke="rgba(255,255,255,0.7)" stroke-width="3" fill="none" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div>
+          <h1 class="legal-title">Privacy Policy</h1>
+          <p class="legal-updated">Last updated: April 21, 2026</p>
+        </div>
+      </header>
+
+      <main class="legal-content">
+
+        <div class="glass-section">
+          <h2>Overview</h2>
+          <p>Social Battery ("the app") is built with privacy first. We collect minimal data, store as much as possible on-device, and never sell your information.</p>
+        </div>
+
+        <div class="glass-section">
+          <h2>Data We Collect</h2>
+          <p><strong>On-device only (never leaves your phone):</strong></p>
+          <ul>
+            <li>Your social battery level and history</li>
+            <li>Your task completions and habits</li>
+            <li>Your buddy selection and preferences</li>
+            <li>Notification preferences and schedules</li>
+          </ul>
+          <p><strong>If you purchase a subscription (via RevenueCat):</strong></p>
+          <ul>
+            <li>Purchase receipt (processed by Apple)</li>
+            <li>Subscription status (managed by RevenueCat)</li>
+            <li>No payment details are ever stored by us</li>
+          </ul>
+        </div>
+
+        <div class="glass-section">
+          <h2>Anonymous Identifier</h2>
+          <p>The app generates a random UUID v4 on first launch, stored locally on your device. This identifier is not linked to your name, email, Apple ID, or any personal information. It is used solely to associate your anonymous usage events and subscription status across app sessions. It is not an advertising identifier and is never shared with data brokers.</p>
+        </div>
+
+        <div class="glass-section">
+          <h2>Data We Do Not Collect</h2>
+          <ul>
+            <li>No account or email required</li>
+            <li>No location data</li>
+            <li>No contacts or address book access</li>
+            <li>No advertising identifiers (IDFA)</li>
+            <li>No cross-app tracking</li>
+            <li>No personal or wellness content from your tasks</li>
+          </ul>
+        </div>
+
+        <div class="glass-section">
+          <h2>Third-Party Services</h2>
+          <p><strong>PostHog</strong> &mdash; anonymous usage analytics. We send product events (app opened, onboarding progress, tutorial steps, paywall views, subscription events, task creation and completion counts, widget interactions) identified only by your anonymous UUID. Events contain only enum values, counts, booleans and timestamps &mdash; no personal data, no task titles, no wellness content, no advertising identifiers. No cross-app tracking occurs, so no App Tracking Transparency prompt is required. Session recording is disabled. Subject to <a href="https://posthog.com/privacy" rel="noopener noreferrer">PostHog's Privacy Policy</a>.</p>
+          <p><strong>Supabase</strong> &mdash; secure backend storage. We store your anonymous UUID along with onboarding preferences (language, experience level, preferred time, tone, buddy selection) and any feedback you choose to submit. Data is insert-only; we cannot read individual records from the client. Subject to <a href="https://supabase.com/privacy" rel="noopener noreferrer">Supabase's Privacy Policy</a>.</p>
+          <p><strong>RevenueCat</strong> &mdash; subscription management. RevenueCat receives your anonymous UUID and Apple purchase receipt to verify and manage your subscription. No payment card details are ever stored by us or RevenueCat. Subject to their <a href="https://www.revenuecat.com/privacy" rel="noopener noreferrer">privacy policy</a>.</p>
+          <p><strong>Apple App Store</strong> &mdash; all purchases and subscriptions are processed by Apple and subject to <a href="https://www.apple.com/legal/privacy/" rel="noopener noreferrer">Apple's Privacy Policy</a>.</p>
+        </div>
+
+        <div class="glass-section">
+          <h2>Notifications</h2>
+          <p>The app may send local notifications (morning reminders, battery check-ins). These are scheduled entirely on-device. No data is sent to any server to trigger these notifications. You can disable them at any time in iOS Settings.</p>
+        </div>
+
+        <div class="glass-section">
+          <h2>Data Retention</h2>
+          <p>Your battery levels, tasks, buddy preferences, and settings are stored locally on your device using MMKV. Deleting the app removes this local data permanently.</p>
+          <p>Anonymous onboarding preferences and feedback submitted through the app are stored on Supabase servers linked to your anonymous UUID. To request deletion of this data, contact us at <a href="mailto:privacy@socialbattery.app">privacy@socialbattery.app</a>.</p>
+        </div>
+
+        <div class="glass-section">
+          <h2>Children's Privacy</h2>
+          <p>Social Battery is not directed at children under 13. We do not knowingly collect personal information from children under 13.</p>
+        </div>
+
+        <div class="glass-section">
+          <h2>Changes to This Policy</h2>
+          <p>We may update this policy as the app evolves. We'll update the "Last updated" date above. Continued use of the app after changes constitutes acceptance.</p>
+        </div>
+
+        <div class="glass-section">
+          <h2>Contact</h2>
+          <p>Questions about your privacy? <a href="mailto:privacy@socialbattery.app">privacy@socialbattery.app</a></p>
+        </div>
+
+      </main>
+    </div>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="terms.html">Terms</a>
+          <a href="mailto:privacy@socialbattery.app">privacy@socialbattery.app</a>
+        </div>
+        <p>Social Battery &mdash; All rights reserved</p>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    (function() {
+      var stars = document.getElementById('stars');
+      if (!stars) return;
+      var s = 42;
+      function rnd() { s = (s * 9301 + 49297) % 233280; return s / 233280; }
+      var W = window.innerWidth, H = window.innerHeight;
+      for (var i = 0; i < 36; i++) {
+        var r = rnd();
+        var x = rnd() * W;
+        var y = rnd() * H * 0.65;
+        var sz = r < 0.15 ? 2.4 : r < 0.5 ? 1.8 : 1.2;
+        var op = 0.35 + rnd() * 0.45;
+        var delay = (rnd() * 2400) | 0;
+        var dur = 2800 + (rnd() * 1800) | 0;
+        var el = document.createElement('span');
+        el.className = 'star';
+        el.style.cssText = [
+          'left:' + x.toFixed(1) + 'px',
+          'top:' + y.toFixed(1) + 'px',
+          'width:' + sz + 'px',
+          'height:' + sz + 'px',
+          '--tw-max:' + op.toFixed(3),
+          '--tw-delay:' + delay + 'ms',
+          '--tw-dur:' + dur + 'ms',
+        ].join(';');
+        stars.appendChild(el);
+      }
+    })();
+  </script>
+</body>
+</html>
