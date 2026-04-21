@@ -187,13 +187,13 @@
       var b = 42;
       function rnd2() { b = (b * 9301 + 49297) % 233280; return b / 233280; }
       var W = window.innerWidth;
-      for (var i = 0; i < 14; i++) {
+      for (var i = 0; i < 28; i++) {
         var x = rnd2() * W;
-        var size = 8 + rnd2() * 22;
+        var size = 8 + rnd2() * 26;
         var op = 0.35 + rnd2() * 0.45;
         var dur = 11 + rnd2() * 9;
-        var delay = rnd2() * 14;
-        var sway = (rnd2() - 0.5) * 60;
+        var delay = -rnd2() * dur;
+        var sway = (rnd2() - 0.5) * 80;
         var el = document.createElement('span');
         el.className = 'bubble';
         el.style.cssText = [

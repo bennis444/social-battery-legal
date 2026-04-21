@@ -59,14 +59,6 @@
             <path d="M 96 60 C 106 48 110 36 106 24" stroke="#4D9FBF" stroke-width="5" fill="none" stroke-linecap="round"/>
             <circle cx="106" cy="24" r="5" fill="#4D9FBF"/>
 
-            <!-- Arms -->
-            <ellipse cx="18" cy="146" rx="22" ry="15" fill="url(#armGradL)"/>
-            <ellipse cx="142" cy="146" rx="22" ry="15" fill="url(#armGradR)"/>
-
-            <!-- Legs -->
-            <rect x="58" y="193" width="20" height="26" rx="9" ry="9" fill="#4D9FBF"/>
-            <rect x="82" y="193" width="20" height="26" rx="9" ry="9" fill="#4D9FBF"/>
-
             <!-- Eyes group — blink animation applied here -->
             <g class="buddy-eyes" style="transform-box: fill-box; transform-origin: center;">
               <circle cx="58" cy="120" r="13" fill="#0d0d0d"/>
@@ -87,7 +79,12 @@
 
         <nav class="nav-cards" aria-label="Legal pages">
           <a href="privacy.html" class="nav-card">
-            <span class="nav-card-icon" aria-hidden="true">🔒</span>
+            <span class="nav-card-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2 L4 5 V11 C4 16 7.5 20 12 22 C16.5 20 20 16 20 11 V5 Z"/>
+                <path d="M9 12 L11 14 L15 10"/>
+              </svg>
+            </span>
             <div class="nav-card-body">
               <div class="nav-card-title">Privacy Policy</div>
               <div class="nav-card-desc">How we handle your data</div>
@@ -95,7 +92,14 @@
             <span class="nav-card-arrow" aria-hidden="true">&#8594;</span>
           </a>
           <a href="terms.html" class="nav-card">
-            <span class="nav-card-icon" aria-hidden="true">📜</span>
+            <span class="nav-card-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2 H6 A2 2 0 0 0 4 4 V20 A2 2 0 0 0 6 22 H18 A2 2 0 0 0 20 20 V8 Z"/>
+                <path d="M14 2 V8 H20"/>
+                <line x1="8" y1="13" x2="16" y2="13"/>
+                <line x1="8" y1="17" x2="14" y2="17"/>
+              </svg>
+            </span>
             <div class="nav-card-body">
               <div class="nav-card-title">Terms of Use</div>
               <div class="nav-card-desc">Rules for using the app</div>
@@ -151,17 +155,18 @@
       }
     })();
 
-    // Generate 14 bubbles (battery mechanic)
+    // Generate 28 bubbles — negative delays = pop immediate from top
     (function() {
       var box = document.getElementById('bubbles');
       if (!box) return;
-      for (var i = 0; i < 14; i++) {
+      for (var i = 0; i < 28; i++) {
         var x = rnd() * W;
-        var size = 8 + rnd() * 22;
+        var size = 8 + rnd() * 26;
         var op = 0.35 + rnd() * 0.45;
         var dur = 11 + rnd() * 9;
-        var delay = rnd() * 14;
-        var sway = (rnd() - 0.5) * 60;
+        // Negative delay range → bubbles spawn mid-animation, visible immediately
+        var delay = -rnd() * dur;
+        var sway = (rnd() - 0.5) * 80;
         var el = document.createElement('span');
         el.className = 'bubble';
         el.style.cssText = [
