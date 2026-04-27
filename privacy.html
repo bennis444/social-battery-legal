@@ -58,7 +58,7 @@
         </div>
         <div>
           <h1 class="legal-title">Privacy Policy</h1>
-          <p class="legal-updated">Last updated: April 25, 2026</p>
+          <p class="legal-updated">Last updated: April 27, 2026</p>
         </div>
       </header>
 
@@ -66,7 +66,7 @@
 
         <div class="glass-section">
           <h2>Overview</h2>
-          <p>Social Battery ("the app") is built with privacy first. We collect minimal data, store as much as possible on-device, and never sell your information.</p>
+          <p>Social Battery is built to keep most data on your device. We collect a limited set of pseudonymous product and subscription data to operate the app, improve onboarding, and manage premium access. We do not sell your information and we do not use cross-app tracking.</p>
         </div>
 
         <div class="glass-section">
@@ -105,9 +105,9 @@
 
         <div class="glass-section">
           <h2>Third-Party Services</h2>
-          <p><strong>PostHog</strong> &mdash; anonymous usage analytics. We send product events (app opened, onboarding progress, tutorial steps, notification permission outcome, paywall views, subscription events, task creation and completion counts, widget interactions) identified only by your pseudonymous UUID. Events contain only enum values, counts, booleans and timestamps &mdash; no personal data, no task titles, no wellness content, no advertising identifiers. Session recording is disabled.</p>
+          <p><strong>PostHog</strong> &mdash; product analytics. We send product events such as app opens, onboarding completion, tutorial progress, paywall events, restore and purchase events, task creation and completion, widget interactions, and notification permission results. These events are tied to your pseudonymous UUID and contain counts, booleans, enum-like values, and timestamps. Session recording is disabled.</p>
           <p>PostHog is configured to use its <strong>EU-based infrastructure</strong> (eu.i.posthog.com) &mdash; your data is processed and stored within the European Union. Geographic IP resolution (GeoIP) is disabled &mdash; we do not use your IP address for analytics purposes. Subject to <a href="https://posthog.com/privacy" rel="noopener noreferrer">PostHog's Privacy Policy</a>.</p>
-          <p><strong>Supabase</strong> &mdash; secure backend storage. We store your pseudonymous UUID along with onboarding preferences (language, energy type, experience level, buddy selection, focus areas) and any feedback you choose to submit. Data can be deleted from the app at any time via Settings &rarr; Delete my data. Supabase infrastructure is located in the EU. Subject to <a href="https://supabase.com/privacy" rel="noopener noreferrer">Supabase's Privacy Policy</a>.</p>
+          <p><strong>Supabase</strong> &mdash; secure backend storage. We store your pseudonymous UUID along with your selected buddy, app language, self-selected energy type, self-selected current level, selected focus areas, and any feedback you choose to submit. Data can be deleted from the app at any time via Settings &rarr; Delete my data. Supabase infrastructure is located in the EU. Subject to <a href="https://supabase.com/privacy" rel="noopener noreferrer">Supabase's Privacy Policy</a>.</p>
           <p><strong>RevenueCat</strong> &mdash; subscription management. RevenueCat receives your pseudonymous UUID and Apple purchase receipt to verify and manage your subscription. No payment card details are ever stored by us or RevenueCat. Subject to their <a href="https://www.revenuecat.com/privacy" rel="noopener noreferrer">privacy policy</a>.</p>
           <p><strong>Apple App Store</strong> &mdash; all purchases and subscriptions are processed by Apple and subject to <a href="https://www.apple.com/legal/privacy/" rel="noopener noreferrer">Apple's Privacy Policy</a>.</p>
         </div>
@@ -128,7 +128,7 @@
           <ul>
             <li><strong>Right of access</strong> &mdash; request a copy of the data we hold about you</li>
             <li><strong>Right to rectification</strong> &mdash; request correction of inaccurate data</li>
-            <li><strong>Right to erasure</strong> &mdash; request deletion of your data (also available in-app via Settings &rarr; Delete server data)</li>
+            <li><strong>Right to erasure</strong> &mdash; request deletion of your data (also available in-app via Settings &rarr; Delete my data)</li>
             <li><strong>Right to restriction</strong> &mdash; request that we limit processing of your data</li>
             <li><strong>Right to data portability</strong> &mdash; request your data in a machine-readable format</li>
             <li><strong>Right to object</strong> &mdash; object to processing based on legitimate interests at any time</li>
@@ -148,8 +148,14 @@
 
         <div class="glass-section">
           <h2>Data Retention</h2>
-          <p>Your battery levels, tasks, buddy preferences, and settings are stored locally on your device using MMKV. Deleting the app removes this local data permanently.</p>
-          <p>Anonymous onboarding preferences and feedback submitted through the app are stored on Supabase servers linked to your pseudonymous UUID. You can delete this data yourself via Settings &rarr; Delete server data, or contact <a href="mailto:contact.socialbatterylegal@gmail.com">contact.socialbatterylegal@gmail.com</a>.</p>
+          <p>Local app data is stored on your device using MMKV. If you use <strong>Settings &rarr; Delete my data</strong>, the app:</p>
+          <ul>
+            <li>erases local app data from the device</li>
+            <li>clears the widget snapshot stored through the shared app group</li>
+            <li>resets the app to first launch with a new anonymous UUID</li>
+            <li>requests deletion of your onboarding answers and feedback stored on Supabase</li>
+          </ul>
+          <p>Deleting app data does <strong>not</strong> cancel Apple subscriptions. Subscription billing is managed separately by Apple.</p>
           <p>Third-party retention: PostHog retains event data for up to 1 year by default. RevenueCat retains transaction records as required for financial compliance. Supabase retains data until you request deletion.</p>
         </div>
 
